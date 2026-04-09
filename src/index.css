@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-neutral font-body;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-headline text-primary;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-block px-10 py-5 font-semibold uppercase tracking-widest text-sm cursor-pointer transition-all duration-300;
+  }
+  .btn-primary {
+    @apply bg-primary text-background hover:bg-neutral hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-background;
+  }
+}
