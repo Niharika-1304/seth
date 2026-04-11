@@ -38,8 +38,8 @@ const About = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/60 to-transparent z-10" />
         </div>
         
-        <div className="container mx-auto px-8 relative z-20">
-          <div className="max-w-4xl -mt-40">
+        <div className="container mx-auto px-6 md:px-12 relative z-20">
+          <div className="max-w-4xl lg:-mt-40">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -54,7 +54,7 @@ const About = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-6xl md:text-[5rem] font-headline leading-[1.1] text-white mb-12 tracking-tighter italic"
+              className="text-4xl md:text-[4.5rem] lg:text-[5rem] font-headline leading-[1.1] text-white mb-12 tracking-tighter italic"
             >
               Establishing trust <br />
               <span className="text-accent not-italic font-bold">through philosophy.</span>
@@ -232,11 +232,11 @@ const About = () => {
                    <span className="text-[12px] font-black uppercase tracking-[0.4em] text-white">We Are Committed</span>
                  </div>
                  
-                 <h3 className="text-4xl md:text-6xl font-headline italic text-primary mt-12 mb-12 tracking-tighter">
+                 <h3 className="text-3xl md:text-6xl font-headline italic text-primary mt-12 mb-12 tracking-tighter">
                    Our Mission Statement
                  </h3>
                  
-                 <div className="space-y-8 max-w-xl text-neutral/50 font-body text-base leading-relaxed mb-12 border-l-2 border-accent/20 pl-10">
+                 <div className="space-y-8 max-w-xl text-neutral/50 font-body text-base leading-relaxed mb-12 border-l-2 border-accent/20 pl-6 md:pl-10">
                    <p className="italic">
                      "The firm focuses on improving how businesses operate, train, and scale through systems, not isolated adjustments."
                    </p>
@@ -245,7 +245,7 @@ const About = () => {
                    </p>
                  </div>
                  
-                 <Link to="/contact" className="bg-[#4C6444] text-white px-12 py-5 mt-10 rounded-full font-bold uppercase tracking-widest hover:bg-primary transition-all duration-500 shadow-xl shadow-primary/20 inline-flex items-center gap-4 group">
+                 <Link to="/contact" className="bg-[#4C6444] text-white px-10 md:px-12 py-5 mt-10 rounded-full font-bold text-sm md:text-base uppercase tracking-widest hover:bg-primary transition-all duration-500 shadow-xl shadow-primary/20 inline-flex items-center gap-4 group">
                    Learn More About Us 
                    <FiArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform" />
                  </Link>
@@ -278,7 +278,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-5xl font-headline tracking-tighter text-primary leading-tight"
+              className="text-3xl md:text-5xl font-headline tracking-tighter text-primary leading-tight"
             >
               Ready for <br/> 
               <span className="text-accent italic font-light">Operational Clarity?</span>

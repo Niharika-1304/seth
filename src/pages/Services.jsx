@@ -81,21 +81,21 @@ const Services = () => {
         {/* Neutral Background Overlay for Max Clarity */}
         <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px] z-0" />
         
-        <div className="container mx-auto px-8 relative z-10">
+        <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-3xl">
             <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
               className="inline-flex items-center gap-4 mb-6"
             >
               <span className="w-12 h-[1px] bg-accent"></span>
-              <span className="py-5 text-accent text-[10px] uppercase font-black tracking-[0.5em]">The Perspective</span>
+              <span className="text-accent text-[10px] uppercase font-black tracking-[0.5em]">The Perspective</span>
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-headline leading-[0.95] text-white mb-8 tracking-tighter"
+              className="text-4xl md:text-7xl font-headline leading-[1.1] md:leading-[1.05] text-white mb-8 tracking-tighter"
             >
               Performance is not a staffing problem— <br />
               <span className="text-accent italic font-light">it is a systems problem.</span>
@@ -113,9 +113,9 @@ const Services = () => {
         </div>
       </header>
 
-      {/* Structural Realities Cards: Overlapping Placement */}
-        <div className="container mx-auto px-8 relative z-20 -mt-24 mb-0">
-          <div className="grid md:grid-cols-3 gap-6">
+      {/* Structural Realities Cards */}
+        <div className="container mx-auto px-6 md:px-12 relative z-20 -mt-12 md:-mt-24 mb-0">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Realities Card 1: White */}
             <motion.div 
@@ -436,7 +436,7 @@ const Services = () => {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 relative">
             {[
               { label: "Assessment Engagements", type: "Discovery", icon: <FiSearch />, desc: "A 360-degree deep dive into current operational bottlenecks." },
               { label: "Systems Optimization", type: "Architecture", icon: <FiLayers />, desc: "Designing structured workflows and labor alignment models." },
@@ -452,29 +452,29 @@ const Services = () => {
                 className="group flex flex-col items-center text-center relative"
               >
                 {/* Step Icon Circle */}
-                <div className="relative mb-10">
-                  <div className="w-24 h-24 bg-accent rounded-full flex items-center justify-center text-primary text-3xl shadow-xl shadow-accent/20 group-hover:scale-110 transition-transform duration-500">
+                <div className="relative mb-8">
+                  <div className="w-20 h-20 md:w-24 md:h-24 bg-accent rounded-full flex items-center justify-center text-primary text-2xl md:text-3xl shadow-xl shadow-accent/20 group-hover:scale-110 transition-transform duration-500">
                     {item.icon}
                   </div>
                   {/* Step Number Badge */}
-                  <div className="absolute -top-2 -right-2 w-10 h-10 bg-primary text-accent rounded-full border-4 border-white flex items-center justify-center text-[10px] font-black italic">
+                  <div className="absolute -top-1 -right-1 w-8 h-8 md:w-10 md:h-10 bg-primary text-accent rounded-full border-2 md:border-4 border-white flex items-center justify-center text-[9px] md:text-[10px] font-black italic">
                     0{i+1}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <div>
-                    <span className="text-[10px] font-black tracking-widest uppercase text-accent mb-1 block group-hover:tracking-[0.3em] transition-all duration-500">Phase: {item.type}</span>
-                    <h4 className="text-2xl font-headline italic text-primary leading-tight group-hover:text-accent transition-colors duration-500">{item.label}</h4>
+                    <span className="text-[9px] font-black tracking-widest uppercase text-accent mb-1 block group-hover:tracking-[0.3em] transition-all duration-500">Phase: {item.type}</span>
+                    <h4 className="text-xl md:text-2xl font-headline italic text-primary leading-tight group-hover:text-accent transition-colors duration-500">{item.label}</h4>
                   </div>
-                  <p className="text-sm text-neutral/40 font-body leading-relaxed">
+                  <p className="text-xs md:text-sm text-neutral/40 font-body leading-relaxed md:max-w-[220px] mx-auto">
                     {item.desc}
                   </p>
                 </div>
 
-                {/* Connecting Line (Mobile Fallback Dot) */}
-                <div className="absolute top-12 -right-6 w-12 h-px bg-neutral-200 hidden md:block group-last:hidden" />
+                {/* Connecting Line (Only for larger tablets and screens) */}
+                <div className="absolute top-10 md:top-12 -right-4 lg:-right-6 w-8 md:w-12 h-px bg-neutral-200 hidden lg:block group-last:hidden" />
               </motion.div>
             ))}
           </div>

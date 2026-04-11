@@ -97,7 +97,7 @@ const Approach = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-6xl md:text-8xl font-headline leading-[1.1] text-white mb-10 tracking-tighter italic"
+              className="text-5xl md:text-8xl font-headline leading-[1.1] text-white mb-10 tracking-tighter italic"
             >
               Integrated <br />
               <span className="text-accent not-italic font-bold">Systems Design</span>
@@ -276,7 +276,7 @@ const Approach = () => {
               <div className="inline-block px-4 py-1 bg-accent/10 text-accent rounded-full text-[10px] font-black uppercase tracking-widest mb-6 w-fit">
                 Differentiation
               </div>
-              <h2 className="text-4xl md:text-5xl mb-6 font-headline italic text-primary tracking-tight leading-tight">
+              <h2 className="text-3xl md:text-5xl mb-6 font-headline italic text-primary tracking-tight leading-tight">
                 Designed for <span className="text-accent not-italic">long-term</span> capability <br />not temporary fixes.
               </h2>
               <p className="text-lg text-neutral/40 font-body leading-relaxed max-w-xl mb-10">
@@ -298,7 +298,7 @@ const Approach = () => {
               {/* Fade Overlay (Only on desktop to transition from white text area) */}
               <div className="absolute inset-0 z-10 bg-gradient-to-r from-white via-white/20 to-transparent hidden lg:block" />
               
-              <div className="w-full h-full overflow-hidden relative">
+              <div className="absolute inset-0 w-full h-full overflow-hidden">
                 <img 
                   src={ingredientsImage2} 
                   alt="Ingredients & Differentiation" 
