@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
             alt="Privacy Policy" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-primary/90 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-primary/75 backdrop-blur-[2px]" />
         </div>
         
         <div className="container mx-auto px-8 relative z-10">

@@ -16,7 +16,7 @@ const Navbar = () => {
   }, []);
 
   // Determine if we should use dark or light text based on scroll and page
-  const isDarkHero = ['/services', '/approach', '/about', '/privacy', '/terms'].includes(location.pathname);
+  const isDarkHero = ['/', '/services', '/approach', '/about', '/privacy', '/terms'].includes(location.pathname);
   const navTextColor = (isDarkHero && !isScrolled) ? 'text-white' : 'text-primary';
   const navBg = isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-8';
 

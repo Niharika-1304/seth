@@ -11,6 +11,7 @@ export default {
         neutral: "#2B2B2B", // Charcoal
         background: "#F4F1EA", // Cream
         accent: "#C2A46D", // Muted Gold
+        lime: "#BFFF00", // Vibrant Lime for buttons and highlights
       },
       fontFamily: {
         headline: ['Playfair Display', 'serif'],

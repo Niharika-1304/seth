@@ -5,7 +5,7 @@ import ingredientsImage2 from '../assets/Ingredients 2.jpg';
 import heroBg from '../assets/Kitchen Counter 3.jpg';
 import backoffice4 from '../assets/Backoffice 4.jpg';
 import meeting4 from '../assets/Meeting 4.jpg';
-import prep4 from '../assets/CPG Images - Prep 4.jpg';
+import prep4 from '../assets/Prep 4.jpg';
 import standards4 from '../assets/Standards 4.jpg';
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import heroBg from '../assets/CPG Images - Prep 1.jpg';
+import heroBg from '../assets/Prep 1.jpg';
 
 const TermsOfService = () => {
   return (
@@ -12,7 +12,7 @@ const TermsOfService = () => {
             alt="Terms of Service" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-primary/90 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-primary/75 backdrop-blur-[2px]" />
         </div>
         
         <div className="container mx-auto px-8 relative z-10">
