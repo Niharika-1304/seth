@@ -95,7 +95,7 @@ const Services = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-7xl font-headline leading-[1.1] md:leading-[1.05] text-white mb-8 tracking-tighter"
+              className="text-4xl md:text-6xl lg:text-7xl font-headline leading-[1.2] lg:leading-[1.05] text-white mb-8 tracking-tighter"
             >
               Performance is not a staffing problem— <br />
               <span className="text-accent italic font-light">it is a systems problem.</span>

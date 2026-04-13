@@ -54,7 +54,7 @@ const About = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl md:text-[4.5rem] lg:text-[5rem] font-headline leading-[1.1] text-white mb-12 tracking-tighter italic"
+              className="text-4xl md:text-6xl lg:text-[5rem] font-headline leading-[1.2] lg:leading-[1.1] text-white mb-12 tracking-tighter italic"
             >
               Establishing trust <br />
               <span className="text-accent not-italic font-bold">through philosophy.</span>

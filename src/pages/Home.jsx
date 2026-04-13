@@ -22,7 +22,7 @@ const Home = () => {
     <div className="flex flex-col bg-background selection:bg-accent/10 selection:text-accent">
       {/* 1. HERO SECTION (FULL SCREEN) */}
       <header 
-        className="relative h-screen w-full flex items-center overflow-hidden bg-center bg-cover bg-no-repeat"
+        className="relative min-h-screen w-full flex items-center pt-32 pb-20 overflow-hidden bg-center bg-cover bg-no-repeat"
         style={{ backgroundImage: `url("${meeting3}")` }}
       >
         {/* Cinematic Backdrop Overlay */}
@@ -30,7 +30,7 @@ const Home = () => {
 
         <div className="container mx-auto px-6 md:px-16 relative z-20">
           <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-8xl mb-8 leading-[1.1] md:leading-[1.05] tracking-tight font-headline text-white drop-shadow-2xl">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl mb-8 leading-[1.2] lg:leading-[1.05] tracking-tight font-headline text-white drop-shadow-2xl">
               Operational Clarity <br />
               <span className="text-accent font-light italic opacity-90">for Food Systems</span>
             </h1>

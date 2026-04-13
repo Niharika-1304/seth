@@ -97,7 +97,7 @@ const Approach = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-8xl font-headline leading-[1.1] text-white mb-10 tracking-tighter italic"
+              className="text-5xl md:text-6xl lg:text-8xl font-headline leading-[1.2] lg:leading-[1.1] text-white mb-10 tracking-tighter italic"
             >
               Integrated <br />
               <span className="text-accent not-italic font-bold">Systems Design</span>
