@@ -173,18 +173,19 @@ const Home = () => {
                 img: ingredients4
               },
             ].map((item, i) => (
-              <div key={i} className="bg-white rounded-[1.75rem] overflow-hidden shadow-lg shadow-primary/8 hover:shadow-xl hover:shadow-primary/12 hover:-translate-y-2 transition-all duration-500 flex flex-col h-full group border border-primary/3">
-                <div className="relative h-full overflow-hidden bg-gray-100">
+              <div key={i} className="bg-white rounded-[3rem] p-4 shadow-2xl shadow-primary/5 hover:-translate-y-3 transition-all duration-500 overflow-hidden group flex flex-col h-full border border-black/[0.03]">
+                <div className="relative h-80 rounded-[2rem] overflow-hidden mb-8">
                   <img 
                     src={item.img} 
                     alt={item.title} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-                <div className="px-7 py-6 flex flex-col flex-grow">
-                  <h3 className="text-lg font-bold text-primary mb-3 font-body leading-tight">{item.title}</h3>
-                  <p className="text-primary/70 text-sm leading-relaxed mb-8 flex-grow">{item.desc}</p>
-                  <button className="bg-accent text-primary w-full py-3.5 rounded-full font-bold text-[10px] uppercase tracking-[0.15em] hover:bg-primary hover:text-white transition-all duration-300 shadow-lg shadow-accent/20 active:scale-95 border-none">
+                <div className="px-8 pb-10 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-bold text-primary mb-4 font-body tracking-tight">{item.title}</h3>
+                  <p className="text-primary/60 text-sm leading-relaxed mb-10 flex-grow font-body">{item.desc}</p>
+                  <button className="bg-accent text-primary w-full py-5 rounded-full font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-primary hover:text-white transition-all shadow-xl shadow-accent/10 active:scale-95">
                     Learn More
                   </button>
                 </div>

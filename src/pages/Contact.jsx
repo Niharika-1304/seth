@@ -2,6 +2,47 @@ import { useState } from 'react';
 import { ChevronRight, ChevronLeft, Check, ArrowRight, MessageSquare, ShieldCheck, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// Email submission using Formspree (free, reliable, no setup)
+const sendEmail = async (formData) => {
+  const ACCESS_KEY = "c9105199-e332-488f-a108-a14ae75a7c37"; // Default public key for Web3Forms
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        access_key: ACCESS_KEY,
+        name: formData.name,
+        email: formData.email,
+        business_name: formData.businessName,
+        location: formData.location,
+        business_type: formData.businessType,
+        revenue_range: formData.revenueRange,
+        primary_challenge: formData.primaryChallenge,
+        pressure_points: formData.pressurePoints.join(', '),
+        current_systems: formData.currentSystems,
+        readiness: formData.readiness,
+        assessment_open: formData.assessmentOpen,
+        subject: `New Lead: ${formData.businessName} (${formData.name})`,
+        from_name: "CPG Contact Form"
+      })
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      return { success: true };
+    } else {
+      throw new Error(result.message || 'Submission failed');
+    }
+  } catch (error) {
+    console.error('Email error:', error);
+    throw error;
+  }
+};
+
 const Contact = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -11,18 +52,79 @@ const Contact = () => {
     currentSystems: '', readiness: '', assessmentOpen: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
+  const [validationError, setValidationError] = useState(null);
 
   const steps = 6;
   const progress = (step / steps) * 100;
 
-  const handleNext = () => { if (step < steps) setStep(step + 1); };
-  const handlePrev = () => { if (step > 1) setStep(step - 1); };
+  const validateStep = (currentStep) => {
+    setValidationError(null);
+    switch (currentStep) {
+      case 1:
+        if (!formData.name || !formData.email || !formData.businessName || !formData.location) {
+          setValidationError("Please fill in all identification fields.");
+          return false;
+        }
+        if (!formData.email.includes('@')) {
+          setValidationError("Please enter a valid email address.");
+          return false;
+        }
+        return true;
+      case 2:
+        if (!formData.businessType || !formData.revenueRange) {
+          setValidationError("Please select your business type and revenue range.");
+          return false;
+        }
+        return true;
+      case 3:
+        if (!formData.primaryChallenge || formData.pressurePoints.length === 0) {
+          setValidationError("Please describe your challenge and select at least one pressure point.");
+          return false;
+        }
+        return true;
+      case 4:
+        if (!formData.currentSystems) {
+          setValidationError("Please select your current systems status.");
+          return false;
+        }
+        return true;
+      case 5:
+        if (!formData.readiness) {
+          setValidationError("Please select your implementation readiness.");
+          return false;
+        }
+        return true;
+      case 6:
+        if (!formData.assessmentOpen) {
+          setValidationError("Please select an option for the strategic assessment.");
+          return false;
+        }
+        return true;
+      default:
+        return true;
+    }
+  };
+
+  const handleNext = () => { 
+    if (validateStep(step)) {
+      if (step < steps) setStep(step + 1); 
+    }
+  };
+
+  const handlePrev = () => { 
+    setValidationError(null);
+    if (step > 1) setStep(step - 1); 
+  };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    setValidationError(null); // Clear error on change
   };
 
   const toggleOption = (field, value, multi = false) => {
+    setValidationError(null); // Clear error on interaction
     if (multi) {
       setFormData(prev => {
         const current = prev[field] || [];
@@ -33,9 +135,28 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitted(true);
+  const handleSubmit = async (e) => {
+    if (e) e.preventDefault();
+    
+    // Safety check: ensure we are on the final step before submission
+    if (step !== steps) return;
+    
+    // Final validation
+    if (!validateStep(6)) return;
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      // Send email using Web3Forms API
+      await sendEmail(formData);
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitError('Failed to submit. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -237,6 +358,13 @@ const Contact = () => {
             )}
           </div>
 
+          {/* ERROR MESSAGES */}
+          {(submitError || validationError) && (
+            <div className="mb-8 p-6 bg-red-50 border border-red-200 rounded-2xl animate-in fade-in slide-in-from-bottom-4 duration-500">
+              <p className="text-red-700 font-body text-sm">{submitError || validationError}</p>
+            </div>
+          )}
+
           {/* NAV CONTROLS */}
           <div className="pt-20 flex items-center justify-between">
             {step > 1 ? (
@@ -251,8 +379,8 @@ const Contact = () => {
                   Next Step <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </button>
               ) : (
-                <button type="submit" className="inline-flex items-center gap-6 bg-accent text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-[10px] hover:bg-primary transition-all shadow-xl shadow-accent/20 animate-bounce-subtle">
-                  Request Consultation <Zap className="w-4 h-4 fill-white" />
+                <button type="submit" disabled={isSubmitting} className="inline-flex items-center gap-6 bg-accent text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-[10px] hover:bg-primary transition-all shadow-xl shadow-accent/20 disabled:opacity-50 disabled:cursor-not-allowed animate-bounce-subtle">
+                  {isSubmitting ? 'Submitting...' : 'Request Consultation'} <Zap className="w-4 h-4 fill-white" />
                 </button>
               )}
             </div>
