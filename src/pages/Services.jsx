@@ -267,7 +267,7 @@ const Services = () => {
                 scale: { duration: 1, ease: "easeOut" },
                 opacity: { duration: 1 }
               }}
-              className="relative z-20 w-[500px] h-[500px] rounded-full border-[1rem] border-white shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] overflow-hidden"
+              className="relative z-20 w-[500px] h-[500px] rounded-full border-[0.5rem] border-white shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] overflow-hidden"
             >
               <img 
                 src={meetingImage2} 

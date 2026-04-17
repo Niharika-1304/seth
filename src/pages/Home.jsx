@@ -7,9 +7,9 @@ import standardsImage2 from '../assets/standards-2.jpg';
 import standardsImage3 from '../assets/standards-3.jpg';
 import paperworkImage from '../assets/paperwork-5.jpg';
 import ingredients3 from '../assets/Ingredients 3.jpg';
-import ingredients4 from '../assets/Ingredients 4.jpg';
-import ingredients5 from '../assets/Ingredients 5.jpg';
-import ingredients6 from '../assets/Ingredients 6.jpg';
+import paperwork9 from '../assets/Paperwork 9.jpg';
+import kitchen2 from '../assets/Kitchen Counter 2.jpg';
+import prep5 from '../assets/Prep 5.jpg';
 import meeting1 from '../assets/Meeting 1.jpg';
 import meeting3 from '../assets/Meeting 3.jpg';
 import meeting5 from '../assets/Meeting 5.jpg';
@@ -141,7 +141,7 @@ const Home = () => {
       {/* 3. CORE DOMAINS */}
       <section className="py-20 bg-[#EDF2EE]" id="domains">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-24">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-6xl font-headline font-bold text-primary mb-8">Core Domains</h2>
              <div className="flex justify-center gap-2"> 
               <div className="w-2.5 h-2.5 rounded-full bg-accent"></div>
@@ -150,7 +150,7 @@ const Home = () => {
             </div>
           </div>
           
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
             {[
               { 
                 title: 'Systems Design', 
@@ -159,35 +159,35 @@ const Home = () => {
               },
               { 
                 title: 'Operations Strategy', 
-                desc: 'Improving efficiency through labor alignment and workflow analysis.', 
-                img: ingredients5
+                desc: 'It involves analyzing existing processes, identifying bottlenecks, and implementing structured solutions. ',
+                img: kitchen2
               },
               { 
                 title: 'Workforce Development', 
                 desc: 'Building internal capability through structured training systems.', 
-                img: ingredients6
+                img: paperwork9
               },
               { 
                 title: 'Implementation Support', 
                 desc: 'Translating theoretical systems into daily practice through rollout and performance tracking.', 
-                img: ingredients4
+                img: prep5
               },
             ].map((item, i) => (
-              <div key={i} className="bg-white rounded-[3rem] p-4 shadow-2xl shadow-primary/5 hover:-translate-y-3 transition-all duration-500 overflow-hidden group flex flex-col h-full border border-black/[0.03]">
-                <div className="relative h-80 rounded-[2rem] overflow-hidden mb-8">
+              <div key={i} className="bg-white rounded-[1.5rem] p-3 shadow-xl shadow-primary/5 hover:-translate-y-2 transition-all duration-500 overflow-hidden group flex flex-col h-full border-[0.5px] border-primary/5">
+                <div className="relative h-56 rounded-[0.5rem] overflow-hidden mb-6">
                   <img 
                     src={item.img} 
                     alt={item.title} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-                <div className="px-8 pb-10 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-bold text-primary mb-4 font-body tracking-tight">{item.title}</h3>
-                  <p className="text-primary/60 text-sm leading-relaxed mb-10 flex-grow font-body">{item.desc}</p>
-                  <button className="bg-accent text-primary w-full py-5 rounded-full font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-primary hover:text-white transition-all shadow-xl shadow-accent/10 active:scale-95">
+                <div className="px-6 pb-8 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold text-primary mb-3 font-body tracking-tight">{item.title}</h3>
+                  <p className="text-primary/60 text-xs leading-relaxed mb-8 flex-grow font-body">{item.desc}</p>
+                  <Link to="/contact" className="bg-accent text-primary w-full py-4 rounded-full font-bold text-[9px] uppercase tracking-[0.2em] hover:bg-primary hover:text-white transition-all shadow-lg shadow-accent/5 active:scale-95 text-center block">
                     Learn More
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}

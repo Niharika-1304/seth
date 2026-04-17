@@ -7,13 +7,17 @@ import bentoImg1 from '../assets/Prep 2.jpg';
 import bentoImg2 from '../assets/Standards 1.jpg';
 import bentoImg3 from '../assets/Meeting 1.jpg';
 import bentoImg4 from '../assets/Standards 6.jpg';
+import backoffice1 from '../assets/Backoffice 1.jpg';
+import backoffice2 from '../assets/backoffice-2.jpg';
+import ingredients4 from '../assets/Ingredients 4.jpg';
+import ingredients6 from '../assets/Ingredients 6.jpg';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [rotatingImageIndex, setRotatingImageIndex] = useState(0);
   const [isRotating, setIsRotating] = useState(true);
   
-  const rotatingImages = [bentoImg1, bentoImg2, bentoImg3, bentoImg4];
+  const rotatingImages = [backoffice2, ingredients4, bentoImg2, ingredients6];
   
   const tabs = [
     { 
@@ -28,7 +32,7 @@ const About = () => {
     },
     { 
       label: 'Measurable Outcomes', 
-      image: bentoImg4, 
+      image: backoffice1, 
       text: 'Engagements are measured against operational performance—not activity or effort.' 
     }
   ];
