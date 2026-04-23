@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 // Email submission using Formspree (free, reliable, no setup)
 const sendEmail = async (formData) => {
-  const ACCESS_KEY = "c9105199-e332-488f-a108-a14ae75a7c37"; // Default public key for Web3Forms
+  const ACCESS_KEY = "63afdbf8-20d4-406c-b907-c6e1f4a3d39f"; // New access key for sjb@culinaryprovisiongroup.com
 
   try {
     const response = await fetch('https://api.web3forms.com/submit', {

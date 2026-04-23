@@ -1,7 +1,7 @@
 # Email Setup Guide
 
 ## Overview
-The contact form is now integrated with Web3Forms to send form submissions directly to your email (niharika.rai@lmsathena.com).
+The contact form is now integrated with Web3Forms to send form submissions directly to your email (sjb@culinaryprovisiongroup.com).
 
 ## How It Works
 - **No backend required** - Email submissions go directly to your inbox
@@ -11,7 +11,7 @@ The contact form is now integrated with Web3Forms to send form submissions direc
 ## Current Configuration
 - **Service**: Web3Forms (Integrated)
 - **API Key**: Managed in `Contact.jsx` (Currently using a public key)
-- **Email Recipient**: niharika.rai@lmsathena.com
+- **Email Recipient**: sjb@culinaryprovisiongroup.com
 - **Status**: ✅ Configured for Web3Forms
 
 ## How to Customize
@@ -24,7 +24,7 @@ The contact form is now integrated with Web3Forms to send form submissions direc
 - **Spam**: Check your spam folder for the first few submissions.
    - Step 6: Assessment Engagement
 3. Click "Request Consultation" to submit
-4. Check niharika.rai@lmsathena.com for the submission
+4. Check sjb@culinaryprovisiongroup.com for the submission
 
 ## What Gets Emailed
 When a form is submitted, the following data is sent:
@@ -50,7 +50,7 @@ When a form is submitted, the following data is sent:
 
 ### Emails not arriving?
 1. Check spam/junk folder
-2. Verify niharika.rai@lmsathena.com is correct
+2. Verify sjb@culinaryprovisiongroup.com is correct
 3. Check browser console for errors (F12 > Console tab)
 4. Ensure you're filling all required fields (marked with *)
 
