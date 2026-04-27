@@ -82,13 +82,14 @@ const Home = () => {
             </div>
 
             <h2 className="text-3xl md:text-6xl font-headline italic leading-[1.1] md:leading-[1.05] tracking-tighter text-primary mb-8">
-              Structural failures <br />
-              <span className="text-accent not-italic font-bold">READ AS</span> <br />
-              operational problems.
+              Operational problems <br />
+              <span className="text-accent not-italic font-bold">ARE OFTEN</span> <br />
+              structural failures.
             </h2>
 
             <p className="text-lg md:text-lg text-primary/60 leading-relaxed font-body border-l-4 border-accent/30 pl-8 text-left mb-8">
-              Most foodservice businesses address symptoms through individual effort. The underlying problem is on system Inconsistency isn't a talent problem—it's a systems problem. Effort cannot scale; structure can."<span className="text-primary italic font-semibold">organisational architecture</span>.
+              Most foodservice businesses address symptoms through effort. The underlying issue is structural. <br />
+              Inconsistency is not a talent problem—it is a systems problem. Structure scales. Effort does not.
             </p>
 
             
@@ -101,10 +102,10 @@ const Home = () => {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative z-10">
               {[
-                { icon: <FiAlertCircle />, phase: 'Structural', title: 'Inconsistent Output',       desc: 'Teams work at capacity, yet output quality and speed vary across shifts.' },
-                { icon: <FiTrendingDown />, phase: 'Financial',  title: 'Margin Erosion',            desc: 'Revenue is present. Margin is not. Process leaks go untracked.' },
-                { icon: <FiMaximize />,    phase: 'Operational', title: 'Scaling Without Structure', desc: 'Growth is occurring without the structural depth to support it.' },
-                { icon: <FiUsers />,       phase: 'Workforce',   title: 'Labor Misalignment',        desc: 'Workforce deployment does not consistently align with operational demand.' },
+                { icon: <FiAlertCircle />, phase: 'Structural', title: 'Inconsistent Output',       desc: 'Output varies across shifts because systems are not consistently defined.' },
+                { icon: <FiTrendingDown />, phase: 'Financial',  title: 'Margin Erosion',            desc: 'Revenue exists, but margins degrade through unstructured operations.' },
+                { icon: <FiMaximize />,    phase: 'Operational', title: 'Scaling Without Structure', desc: 'Growth is occurring without the operational foundation required to sustain it.' },
+                { icon: <FiUsers />,       phase: 'Workforce',   title: 'Labor Misalignment',        desc: 'Workforce deployment is inconsistent with operational demand.' },
               ].map((item, i) => (
                 <div key={i} className="flex flex-col items-center text-center group">
 
@@ -159,7 +160,7 @@ const Home = () => {
               },
               { 
                 title: 'Operations Strategy', 
-                desc: 'It involves analyzing existing processes, identifying bottlenecks, and implementing structured solutions. ',
+                desc: 'Analyzing existing operations, identifying constraints, and implementing structured improvements.',
                 img: kitchen2
               },
               { 

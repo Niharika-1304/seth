@@ -97,8 +97,8 @@ const Services = () => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-6xl lg:text-7xl font-headline leading-[1.2] lg:leading-[1.05] text-white mb-8 tracking-tighter"
             >
-              Performance is not a staffing problem— <br />
-              <span className="text-accent italic font-light">it is a systems problem.</span>
+              Performance issues are rarely <br />
+              <span className="text-accent italic font-light">about staffing—they are structural.</span>
             </motion.h1>
             
             <motion.p 
@@ -432,7 +432,7 @@ const Services = () => {
               transition={{ delay: 0.2 }}
               className="text-lg text-neutral/50 font-body leading-relaxed italic"
             >
-              Every engagement begins with a structured assessment. From there: system design, workforce alignment, and ongoing performance governance.
+              Every engagement begins with a structured assessment. From there: system design, workforce alignment, and ongoing performance management.
             </motion.p>
           </div>
 
@@ -527,7 +527,7 @@ const Services = () => {
               <div>
                 <span className="text-accent text-[11px] font-black uppercase tracking-[0.5em] mb-6 block">Capability Scaling</span>
                 <h2 className="text-5xl md:text-7xl font-headline italic text-primary mb-10 tracking-tighter leading-tight">
-                  Training is not <br /> an add-on— <span className="text-accent not-italic font-light">it is scale.</span>
+                  Training is how consistent <br /> performance <span className="text-accent not-italic font-light">scales.</span>
                 </h2>
               </div>
 

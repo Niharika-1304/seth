@@ -15,7 +15,7 @@ import ingredients6 from '../assets/Ingredients 6.jpg';
 const About = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [rotatingImageIndex, setRotatingImageIndex] = useState(0);
-  const [isRotating, setIsRotating] = useState(true);
+  const [isRotating, setIsRotating] = useState(false);
   
   const rotatingImages = [backoffice2, ingredients4, bentoImg2, ingredients6];
   
@@ -84,8 +84,8 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl md:text-6xl lg:text-[5rem] font-headline leading-[1.2] lg:leading-[1.1] text-white mb-12 tracking-tighter italic"
             >
-              Operational clarity <br />
-              <span className="text-accent not-italic font-bold">is the only durable foundation.</span><br />
+              A structured approach <br />
+              <span className="text-accent not-italic font-bold">to operational performance</span><br />
       
             </motion.h1>
           </div>
@@ -247,10 +247,10 @@ const About = () => {
                </h2>
                <div className="space-y-6 max-w-lg text-white/70 font-body text-base leading-relaxed">
                  <p>
-                   We provide structured advisory focused on aligning operations, financial clarity, and workforce capability into a cohesive model.
+                   We design the underlying structure of the business—aligning operations, financial clarity, and workforce capability into a cohesive system.
                  </p>
                  <p>
-                   The goal is not improvement. It is a business that performs consistently without dependency on the engagement.
+                   Our goal is not improvement in isolation. It is a business that performs consistently without dependency on intervention.
                  </p>
                </div>
             </motion.div>
@@ -292,8 +292,7 @@ const About = () => {
                   <div className="relative w-64 h-64 mx-auto">
                     {/* Rotating circular image */}
                     <motion.div 
-                      animate={{ rotate: isRotating ? 360 : 0 }}
-                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                      animate={{ rotate: 0 }}
                       className="w-full h-full rounded-full overflow-hidden border-8 border-white shadow-2xl relative z-10"
                     >
                       <motion.img 
@@ -311,15 +310,13 @@ const About = () => {
                     <motion.button
                       onClick={() => {
                         setRotatingImageIndex((prev) => (prev + 1) % rotatingImages.length);
-                        setIsRotating(true);
+                        setIsRotating(false);
                       }}
                       whileHover={{ scale: 1.15 }}
                       whileTap={{ scale: 0.9 }}
                       className="absolute -top-3 right-2 w-16 h-16 bg-[#4C6444] text-white rounded-full shadow-lg flex items-center justify-center z-30 border-4 border-white hover:bg-accent transition-colors duration-300 cursor-pointer"
                     >
                       <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 2, repeat: Infinity }}
                       >
                         <FiArrowDownRight size={24} />
                       </motion.div>
