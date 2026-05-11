@@ -15,13 +15,13 @@ import meeting3 from '../assets/Meeting 3.jpg';
 import meeting5 from '../assets/Meeting 5.jpg';
 import backoffice3 from '../assets/Backoffice 3.jpg';
 import symbolLogo from '../assets/Symbol Final.png';
-import { FiTarget, FiBarChart2, FiUsers, FiArrowRight, FiAlertCircle, FiTrendingDown, FiMaximize, FiArrowUpRight, FiSearch } from 'react-icons/fi';  
+import { FiTarget, FiBarChart2, FiUsers, FiArrowRight, FiAlertCircle, FiTrendingDown, FiMaximize, FiArrowUpRight, FiSearch } from 'react-icons/fi';
 
 const Home = () => {
   return (
     <div className="flex flex-col bg-background selection:bg-accent/10 selection:text-accent">
       {/* 1. HERO SECTION (FULL SCREEN) */}
-      <header 
+      <header
         className="relative min-h-screen w-full flex items-center pt-32 pb-0 overflow-visible bg-center bg-cover bg-no-repeat"
         style={{ backgroundImage: `url("${meeting3}")` }}
       >
@@ -34,7 +34,7 @@ const Home = () => {
               Operational Clarity <br />
               <span className="text-accent font-light italic opacity-90">for Food Systems</span>
             </h1>
-            
+
             <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
               <Link to="/contact" className="bg-white/50 backdrop-blur-xl border border-white/20 text-black flex items-center gap-4 px-10 py-5 rounded-full text-lg md:text-xl font-bold hover:bg-white hover:text-primary transition-all duration-300 group shadow-2xl">
                 Request a Consultation
@@ -50,16 +50,23 @@ const Home = () => {
                 <p className="text-[9px] font-black uppercase tracking-[0.3em] text-black mb-2">Advisory & Systems Design</p>
                 <p className="text-black font-bold text-sm">OPERATIONAL STRUCTURE</p>
               </div>
-              <div className="bg-primary/100 backdrop-blur-xl px-6 py-7 rounded-2xl flex-[1.4] border border-black/10 shadow-xl transition-all duration-300 hover:bg-white/20">
-                <p className="text-[9px] font-black uppercase tracking-[0.3em] text-white mb-2">Operational Alignment</p>
-                <p className="text-white font-bold text-sm">FINANCIAL STRUCTURE & WORKFORCE PERFORMANCE</p>
+              <div className="group bg-primary/100 backdrop-blur-xl px-6 py-7 rounded-2xl flex-[1.4] border border-black/10 shadow-xl transition-all duration-300 hover:bg-white/20">
+
+                <p className="text-[9px] font-black uppercase tracking-[0.3em] text-white mb-2 transition-colors duration-300 group-hover:text-primary/100">
+                  Operational Alignment
+                </p>
+
+                <p className="text-white font-bold text-sm transition-colors duration-300 group-hover:text-primary/100">
+                  FINANCIAL STRUCTURE & WORKFORCE PERFORMANCE
+                </p>
+
               </div>
             </div>
           </div>
         </div>
 
         {/* WHITE WAVE DIVIDER */}
-        <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style={{filter: 'drop-shadow(0 -2px 6px rgba(0,0,0,0.08))'}}>
+        <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 -2px 6px rgba(0,0,0,0.08))' }}>
           <path d="M0,20 Q180,50 360,20 T720,20 T1080,20 T1440,20 L1440,100 L0,100 Z" fill="white" />
         </svg>
       </header>
@@ -68,7 +75,7 @@ const Home = () => {
       <section className="pt-12 md:pt-12 pb-6 bg-white relative overflow-hidden">
         {/* Subtle Decorative elements */}
         <div className="absolute top-0 right-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-accent/5 rounded-full blur-[100px] md:blur-[120px] -z-0" />
-        
+
         <div className="container mx-auto px-6 md:px-12 relative z-10">
 
           {/* Centred header block */}
@@ -92,7 +99,7 @@ const Home = () => {
               Inconsistency is not a talent problem—it is a systems problem. Structure scales. Effort does not.
             </p>
 
-            
+
           </div>
 
           {/* 4-column diagnostic cards — screenshot layout */}
@@ -102,10 +109,10 @@ const Home = () => {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative z-10">
               {[
-                { icon: <FiAlertCircle />, phase: 'Structural', title: 'Inconsistent Output',       desc: 'Output varies across shifts because systems are not consistently defined.' },
-                { icon: <FiTrendingDown />, phase: 'Financial',  title: 'Margin Erosion',            desc: 'Revenue exists, but margins degrade through unstructured operations.' },
-                { icon: <FiMaximize />,    phase: 'Operational', title: 'Scaling Without Structure', desc: 'Growth is occurring without the operational foundation required to sustain it.' },
-                { icon: <FiUsers />,       phase: 'Workforce',   title: 'Labor Misalignment',        desc: 'Workforce deployment is inconsistent with operational demand.' },
+                { icon: <FiAlertCircle />, phase: 'Structural', title: 'Inconsistent Output', desc: 'Output varies across shifts because systems are not consistently defined.' },
+                { icon: <FiTrendingDown />, phase: 'Financial', title: 'Margin Erosion', desc: 'Revenue exists, but margins degrade through unstructured operations.' },
+                { icon: <FiMaximize />, phase: 'Operational', title: 'Scaling Without Structure', desc: 'Growth is occurring without the operational foundation required to sustain it.' },
+                { icon: <FiUsers />, phase: 'Workforce', title: 'Labor Misalignment', desc: 'Workforce deployment is inconsistent with operational demand.' },
               ].map((item, i) => (
                 <div key={i} className="flex flex-col items-center text-center group">
 
@@ -144,42 +151,42 @@ const Home = () => {
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-6xl font-headline font-bold text-primary mb-8">Core Domains</h2>
-             <div className="flex justify-center gap-2"> 
+            <div className="flex justify-center gap-2">
               <div className="w-2.5 h-2.5 rounded-full bg-accent"></div>
               <div className="w-2.5 h-2.5 rounded-full bg-accent/30"></div>
               <div className="w-2.5 h-2.5 rounded-full bg-accent/10"></div>
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
             {[
-              { 
-                title: 'Systems Design', 
-                desc: 'Operational modeling, financial structure, and process design to clarify functions.', 
+              {
+                title: 'Systems Design',
+                desc: 'Operational modeling, financial structure, and process design to clarify functions.',
                 img: ingredients3
               },
-              { 
-                title: 'Operations Strategy', 
+              {
+                title: 'Operations Strategy',
                 desc: 'Analyzing existing operations, identifying constraints, and implementing structured improvements.',
                 img: kitchen2
               },
-              { 
-                title: 'Workforce Development', 
-                desc: 'Building internal capability through structured training systems.', 
+              {
+                title: 'Workforce Development',
+                desc: 'Building internal capability through structured training systems.',
                 img: paperwork9
               },
-              { 
-                title: 'Implementation Support', 
-                desc: 'Translating theoretical systems into daily practice through rollout and performance tracking.', 
+              {
+                title: 'Implementation Support',
+                desc: 'Translating theoretical systems into daily practice through rollout and performance tracking.',
                 img: prep5
               },
             ].map((item, i) => (
               <div key={i} className="bg-white rounded-[1.5rem] p-3 shadow-xl shadow-primary/5 hover:-translate-y-2 transition-all duration-500 overflow-hidden group flex flex-col h-full border-[0.5px] border-primary/5">
                 <div className="relative h-56 rounded-[0.5rem] overflow-hidden mb-6">
-                  <img 
-                    src={item.img} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
@@ -202,17 +209,17 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-16 md:gap-20 items-center">
             <div className="relative group">
               <div className="absolute -inset-4 bg-accent/10 rounded-3xl blur-2xl group-hover:bg-accent/20 transition-colors duration-500"></div>
-              <div 
-                className="relative z-10 h-[400px] md:h-[550px] bg-center bg-cover rounded-3xl shadow-xl border-4 border-white transition-transform hover:scale-[1.02] duration-700" 
+              <div
+                className="relative z-10 h-[400px] md:h-[550px] bg-center bg-cover rounded-3xl shadow-xl border-4 border-white transition-transform hover:scale-[1.02] duration-700"
                 style={{ backgroundImage: `url(${standardsImage2})` }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-3xl"></div>
                 <div className="absolute bottom-6 md:bottom-10 left-6 md:left-10 text-white p-6 bg-white/10 backdrop-blur rounded-xl border border-white/10 max-w-[calc(100%-48px)] md:max-w-sm">
-                   <p className="text-xs italic">When training is embedded into the operational system, consistent performance becomes a structural output—not a management effort.</p>
+                  <p className="text-xs italic">When training is embedded into the operational system, consistent performance becomes a structural output—not a management effort.</p>
                 </div>
               </div>
             </div>
-            
+
             <div className="flex flex-col items-start">
               <div className="flex items-center gap-3 mb-6">
                 <span className="w-12 h-px bg-accent/50"></span>
@@ -251,17 +258,17 @@ const Home = () => {
       </section>
 
       {/* 6. FINAL CTA */}
-      <section 
+      <section
         className="relative py-32 md:py-40 flex flex-col items-center justify-center text-center overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url("${backoffice3}")` }}
       >
         {/* Transparent Modern Overlay */}
         <div className="absolute inset-0 z-0 bg-black/60"></div>
         <div className="absolute inset-0 z-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
-        
+
         <div className="container mx-auto px-6 md:px-12 flex flex-col items-center relative z-10">
           <span className="text-white text-xs uppercase font-bold tracking-[0.5em] mb-6 block">NEXT STEPS</span>
-          <h2 className="text-4xl md:text-7xl mb-12 md:mb-16 max-w-3xl leading-[1.1] md:leading-tight font-headline tracking-tighter text-white">Ready for <br/>Operational Clarity?</h2>
+          <h2 className="text-4xl md:text-7xl mb-12 md:mb-16 max-w-3xl leading-[1.1] md:leading-tight font-headline tracking-tighter text-white">Ready for <br />Operational Clarity?</h2>
           <Link to="/contact" className="bg-accent text-primary flex items-center gap-4 px-10 md:px-12 py-5 md:py-6 rounded-full text-lg md:text-xl font-bold shadow-2xl hover:bg-white transition-all duration-300 group">
             Request a Consultation
             <FiArrowRight className="group-hover:translate-x-2 transition-transform" />
